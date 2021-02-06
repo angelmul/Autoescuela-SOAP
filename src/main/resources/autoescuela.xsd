@@ -1,0 +1,221 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.compspturno2.autoescuela.com/xml/autoescuela"
+	targetNamespace="http://www.compspturno2.autoescuela.com/xml/autoescuela"
+	elementFormDefault="qualified">
+
+	<xs:element name="ClaseRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ClaseResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Clase" type="tns:Clase" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ClasesRequest">
+		<xs:complexType>
+			<xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ClasesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Clase" type="tns:Clase" maxOccurs="10" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AlumnoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="matricula" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AlumnoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Alumno" type="tns:Alumno" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AlumnosRequest">
+		<xs:complexType>
+			<xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AlumnosResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Alumno" type="tns:Alumno"
+					maxOccurs="10" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AlumnosClaseRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AlumnosClaseResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Alumno" type="tns:Alumno"
+					maxOccurs="10" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ProfesorRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identificador" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ProfesorResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Profesor" type="tns:Profesor" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ProfesoresRequest">
+		<xs:complexType>
+			<xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ProfesoresResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Profesor" type="tns:Profesor"
+					maxOccurs="10" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ProfesorClaseRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ProfesorClaseResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Profesor" type="tns:Profesor" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehiculoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="matricula" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehiculoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vehiculo" type="tns:Vehiculo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehiculosRequest">
+		<xs:complexType>
+			<xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehiculosResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vehiculo" type="tns:Vehiculo"
+					maxOccurs="10" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehiculosClaseRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehiculosClaseResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vehiculo" type="tns:Vehiculo"
+					maxOccurs="10" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Alumno">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="matricula" type="xs:string" />
+			<xs:element name="estadoMatricula" type="xs:boolean" />
+			<xs:element name="examenTeorico" type="xs:boolean" />
+			<xs:element name="examenPractico" type="xs:boolean" />
+			<xs:element name="direccion" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Profesor">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="identificador" type="xs:string" />
+			<xs:element name="direccion" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Clase">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="Alumno" type="tns:Alumno" maxOccurs="10" />
+			<xs:element name="Profesor" type="tns:Profesor" />
+			<xs:element name="Vehiculo" type="tns:Vehiculo"
+				maxOccurs="2" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Vehiculo">
+		<xs:sequence>
+			<xs:element name="modelo" type="xs:string" />
+			<xs:element name="matricula" type="xs:string" />
+			<xs:element name="fechaAdquisicion" type="xs:string" />
+			<xs:element name="enUso" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
